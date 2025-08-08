@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack Pro - Your Fitness Journey Starts Here</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#F59E0B',
+                        dark: '#111827',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b" data-mock="true">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-bold text-primary">FitTrack Pro</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-primary hover:text-blue-700 font-medium" onclick="showLogin()">Sign In</button>
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 font-medium" onclick="showSignup()">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary to-blue-700 text-white py-20" data-mock="true">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Track Your Fitness Journey</h1>
+                <p class="text-xl md:text-2xl mb-8 text-blue-100">Monitor workouts, track progress, achieve your goals with FitTrack Pro</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" onclick="showSignup()">Start Free Trial</button>
+                    <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors">Watch Demo</button>
+                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">50K+</div>
+                        <div class="text-blue-200">Active Users</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">1M+</div>
+                        <div class="text-blue-200">Workouts Logged</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">95%</div>
+                        <div class="text-blue-200">Goal Achievement</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white" data-mock="true">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Everything You Need</h2>
+                <p class="text-xl text-gray-600">Comprehensive fitness tracking tools in one platform</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-dumbbell text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Workout Tracking</h3>
+                    <p class="text-gray-600">Log exercises, sets, reps, and track your progression over time</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Progress Analytics</h3>
+                    <p class="text-gray-600">Visualize your fitness journey with detailed charts and insights</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-fire text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Streak Counter</h3>
+                    <p class="text-gray-600">Stay motivated with daily workout streaks and achievements</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-heart text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Health Metrics</h3>
+                    <p class="text-gray-600">Monitor weight, sleep patterns, and water intake</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Workout Scheduling</h3>
+                    <p class="text-gray-600">Plan your workouts and set personalized reminders</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-mobile-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Mobile Ready</h3>
+                    <p class="text-gray-600">Access your fitness data anywhere with our responsive design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authentication Modal -->
+    <div id="authModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50" data-mock="true">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-md w-full p-6">
+                <!-- Login Form -->
+                <div id="loginForm">
+                    <div class="text-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Welcome Back</h2>
+                        <p class="text-gray-600">Sign in to your FitTrack Pro account</p>
+                    </div>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="john@example.com" data-mock="true">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                            <input type="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="••••••••" data-mock="true">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" data-mock="true">
+                                <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                            </label>
+                            <a href="#" class="text-sm text-primary hover:text-blue-700">Forgot password?</a>
+                        </div>
+                        <button type="button" class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-blue-700 font-medium" onclick="showDashboard()">Sign In</button>
+                    </form>
+                    <div class="mt-6 text-center">
+                        <p class="text-gray-600">Don't have an account? <button class="text-primary hover:text-blue-700 font-medium" onclick="showSignupForm()">Sign up</button></p>
+                    </div>
+                </div>
+
+                <!-- Signup Form -->
+                <div id="signupForm" class="hidden">
+                    <div class="text-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Join FitTrack Pro</h2>
+                        <p class="text-gray-600">Start your fitness journey today</p>
+                    </div>
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                                <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="John" data-mock="true">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="Doe" data-mock="true">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="john@example.com" data-mock="true">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                            <input type="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="••••••••" data-mock="true">
+                        </div>
+                        <div>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" data-mock="true">
+                                <span class="ml-2 text-sm text-gray-600">I agree to the Terms of Service and Privacy Policy</span>
+                            </label>
+                        </div>
+                        <button type="button" class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-blue-700 font-medium" onclick="showOnboarding()">Create Account</button>
+                    </form>
+                    <div class="mt-6 text-center">
+                        <p class="text-gray-600">Already have an account? <button class="text-primary hover:text-blue-700 font-medium" onclick="showLoginForm()">Sign in</button></p>
+                    </div>
+                </div>
+                
+                <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600" onclick="closeAuth()">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Onboarding Modal -->
+    <div id="onboardingModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50" data-mock="true">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-2xl w-full p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Welcome to FitTrack Pro!</h2>
+                    <p class="text-gray-600">Let's set up your fitness profile</p>
+                </div>
+                
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">What are your fitness goals?</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-primary cursor-pointer transition-colors" data-mock="true">
+                                <div class="text-center">
+                                    <i class="fas fa-weight-hanging text-3xl text-primary mb-2"></i>
+                                    <h4 class="font-semibold">Lose Weight</h4>
+                                </div>
+                            </div>
+                            <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-primary cursor-pointer transition-colors" data-mock="true">
+                                <div class="text-center">
+                                    <i class="fas fa-dumbbell text-3xl text-primary mb-2"></i>
+                                    <h4 class="font-semibold">Build Muscle</h4>
+                                </div>
+                            </div>
+                            <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-primary cursor-pointer transition-colors" data-mock="true">
+                                <div class="text-center">
+                                    <i class="fas fa-running text-3xl text-primary mb-2"></i>
+                                    <h4 class="font-semibold">Improve Endurance</h4>
+                                </div>
+                            </div>
+                            <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-primary cursor-pointer transition-colors" data-mock="true">
+                                <div class="text-center">
+                                    <i class="fas fa-balance-scale text-3xl text-primary mb-2"></i>
+                                    <h4 class="font-semibold">Stay Healthy</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Current Weight (lbs)</label>
+                            <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="150" data-mock="true">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Target Weight (lbs)</label>
+                            <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="140" data-mock="true">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-3">How often do you want to work out?</label>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            <button class="border border-gray-300 rounded-lg py-2 px-3 hover:border-primary hover:bg-primary hover:text-white transition-colors" data-mock="true">2x/week</button>
+                            <button class="border border-gray-300 rounded-lg py-2 px-3 hover:border-primary hover:bg-primary hover:text-white transition-colors" data-mock="true">3x/week</button>
+                            <button class="border border-gray-300 rounded-lg py-2 px-3 hover:border-primary hover:bg-primary hover:text-white transition-colors" data-mock="true">4x/week</button>
+                            <button class="border border-gray-300 rounded-lg py-2 px-3 hover:border-primary hover:bg-primary hover:text-white transition-colors" data-mock="true">Daily</button>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between pt-6">
+                        <button class="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50" onclick="closeOnboarding()">Skip</button>
+                        <button class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-blue-700" onclick="showDashboard()">Complete Setup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="hidden" data-mock="true">
+        <!-- Dashboard Navigation -->
+        <nav class="bg-white shadow-sm border-b">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center">
+                        <span class="text-2xl font-bold text-primary">FitTrack Pro</span>
+                        <div class="ml-10 hidden md:flex space-x-8">
+                            <a href="#" class="text-primary border-b-2 border-primary px-1 pb-4 text-sm font-medium" onclick="showDashboardView()">Dashboard</a>
+                            <a href="#" class="text-gray-500 hover:text-gray-700 px-1 pb-4 text-sm font-medium" onclick="showWorkoutView()">Workouts</a>
+                            <a href="#" class="text-gray-500 hover:text-gray-700 px-1 pb-4 text-sm font-medium" onclick="showHealthView()">Health</a>
+                            <a href="#" class="text-gray-500 hover:text-gray-700 px-1 pb-4 text-sm font-medium" onclick="showScheduleView()">Schedule</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-bell text-xl"></i>
+                        </button>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                <span class="text-white text-sm font-medium">JD</span>
+                            </div>
+                            <span class="text-sm font-medium text-gray-700" data-bind="user.name">John Doe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Dashboard Content -->
+        <div id="dashboardContent" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Welcome Section -->
+            <div class="mb-8">
+                <h1 class="text-2xl font-bold text-gray-900 mb-2">Welcome back, <span data-bind="user.firstName">John</span>! 👋</h1>
+                <p class="text-gray-600">Here's your fitness progress today</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-primary bg-opacity-10 rounded-lg">
+                            <i class="fas fa-fire text-primary text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Current Streak</p>
+                            <p class="text-2xl font-bold text-gray-900" data-bind="user.currentStreak">12 days</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-secondary bg-opacity-10 rounded-lg">
+                            <i class="fas fa-dumbbell text-secondary text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Workouts This Week</p>
+                            <p class="text-2xl font-bold text-gray-900" data-bind="user.weeklyWorkouts">5 / 6</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-accent bg-opacity-10 rounded-lg">
+                            <i class="fas fa-chart-line text-accent text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Weight Progress</p>
+                            <p class="text-2xl font-bold text-gray-900" data-bind="user.weightProgress">-8 lbs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-purple-500 bg-opacity-10 rounded-lg">
+                            <i class="fas fa-trophy text-purple-500 text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Achievements</p>
+                            <p class="text-2xl font-bold text-gray-900" data-bind="user.achievements">23</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Charts and Recent Activity -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                <!-- Progress Chart -->
+                <div class="lg:col-span-2 bg-white rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Weight Progress</h3>
+                    <div class="h-64 bg-gray-50 rounded-lg flex items-center justify-center">
+                        <div class="text-center text-gray-500">
+                            <i class="fas fa-chart-area text-4xl mb-2"></i>
+                            <p>Progress chart will be rendered here</p>
+                            <!-- TODO: Implement Chart.js or similar for data visualization -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
+                    <div class="space-y-3">
+                        <button class="w-full bg-primary text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors" onclick="showWorkoutLogging()">
+                            <i class="fas fa-plus mr-2"></i>
+                            Log Workout
+                        </button>
+                        <button class="w-full bg-secondary text-white py-3 px-4 rounded-lg hover:bg-green-700 transition-colors" onclick="showHealthMetrics()">
+                            <i class="fas fa-heart mr-2"></i>
+                            Update Health
+                        </button>
+                        <button class="w-full bg-accent text-white py-3 px-4 rounded-lg hover:bg-yellow-600 transition-colors" onclick="showScheduleView()">
+                            <i class="fas fa-calendar mr-2"></i>
+                            Schedule Workout
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activities -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Recent Activities</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center p-3 bg-gray-50 rounded-lg" data-mock="true">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                            <i class="fas fa-dumbbell text-white"></i>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <p class="font-medium text-gray-900">Upper Body Workout</p>
+                            <p class="text-sm text-gray-600">45 minutes • Chest, Back, Arms</p>
+                        </div>
+                        <div class="text-sm text-gray-500">2 hours ago</div>
+                    </div>
+                    <div class="flex items-center p-3 bg-gray-50 rounded-lg" data-mock="true">
+                        <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
+                            <i class="fas fa-running text-white"></i>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <p class="font-medium text-gray-900">Morning Run</p>
+                            <p class="text-sm text-gray-600">30 minutes • 3.2 miles</p>
+                        </div>
+                        <div class="text-sm text-gray-500">Yesterday</div>
+                    </div>
+                    <div class="flex items-center p-3 bg-gray-50 rounded-lg" data-mock="true">
+                        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
+                            <i class="fas fa-weight text-white"></i>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <p class="font-medium text-gray-900">Weight Update</p>
+                            <p class="text-sm text-gray-600">148 lbs (-2 lbs from last week)</p>
+                        </div>
+                        <div class="text-sm text-gray-500">3 days ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Workout Logging Modal -->
+        <div id="workoutModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+            <div class="flex items-center justify-center min-h-screen p-4">
+                <div class="bg-white rounded-lg max-w-2xl w-full p-6 max-h-screen overflow-y-auto">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Log Workout</h2>
+                        <button class="text-gray-400 hover:text-gray-600" onclick="closeWorkoutModal()">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Workout Type</label>
+                                <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" data-mock="true">
+                                    <option>Strength Training</option>
+                                    <option>Cardio</option>
+                                    <option>Yoga</option>
+                                    <option>Sports</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Duration (minutes)</label>
+                                <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="45" data-mock="true">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Workout Name</label>
+                            <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="Upper Body Strength" data-mock="true">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <label class="block text-sm font-medium text-gray-700">Exercises</label>
+                                <button type="button" class="text-primary hover:text-blue-700 text-sm font-medium">
+                                    <i class="fas fa-plus mr-1"></i>Add Exercise
+                                </button>
+                            </div>
+                            <div class="space-y-3" data-mock="true">
+                                <div class="border rounded-lg p-4">
+                                    <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+                                        <div>
+                                            <label class="block text-xs font-medium text-gray-600 mb-1">Exercise</label>
+                                            <input type="text" class="w-full px-2 py-1 border border-gray-300 rounded text-sm" placeholder="Bench Press" data-mock="true">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-medium text-gray-600 mb-1">Sets</label>
+                                            <input type="number" class="w-full px-2 py-1 border border-gray-300 rounded text-sm" placeholder="3" data-mock="true">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-medium text-gray-600 mb-1">Reps</label>
+                                            <input type="number" class="w-full px-2 py-1 border border-gray-300 rounded text-sm" placeholder="12" data-mock="true">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-medium text-gray-600 mb-1">Weight (lbs)</label>
+                                            <input type="number" class="w-full px-2 py-1 border border-gray-300 rounded text-sm" placeholder="135" data-mock="true">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border rounded-lg p-4">
+                                    <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+                                        <div>
+                                            <label class="block text-xs font-medium text-gray-600 mb-1">Exercise</label>
+                                            <input type="text" class="w-full px-2 py-1 border border-gray-300 rounded text-sm" placeholder="Squats" data-mock="true">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-medium text-gray-600 mb-1">Sets</label>
+                                            <input type="number" class="w-full px-2 py-1 border border-gray-300 rounded text-sm" placeholder="3" data-mock="true">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-medium text-gray-600 mb-1">Reps</label>
+                                            <input type="number" class="w-full px-2 py-1 border border-gray-300 rounded text-sm" placeholder="15" data-mock="true">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-medium text-gray-600 mb-1">Weight (lbs)</label>
+                                            <input type="number" class="w-full px-2 py-1 border border-gray-300 rounded text-sm" placeholder="100" data-mock="true">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Notes</label>
+                            <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" rows="3" placeholder="How did the workout feel? Any observations?" data-mock="true"></textarea>
+                        </div>
+
+                        <div class="flex justify-end space-x-3 pt-4">
+                            <button type="button" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50" onclick="closeWorkoutModal()">Cancel</button>
+                            <button type="button" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700" onclick="logWorkout()">Log Workout</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Health Metrics Modal -->
+        <div id="healthModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+            <div class="flex items-center justify-center min-h-screen p-4">
+                <div class="bg-white rounded-lg max-w-lg w-full p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Update Health Metrics</h2>
+                        <button class="text-gray-400 hover:text-gray-600" onclick="closeHealthModal()">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Weight (lbs)</label>
+                                <input type="number" step="0.1" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="148.5" data-mock="true">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Water Intake (glasses)</label>
+                                <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="8" data-mock="true">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Sleep Duration (hours)</label>
+                            <input type="number" step="0.5" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="7.5" data-mock="true">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Sleep Quality</label>
+                            <div class="flex space-x-2">
+                                <button type="button" class="flex-1 py-2 px-3 border border-gray-300 rounded-lg hover:bg-gray-50 text-sm" data-mock="true">Poor</button>
+                                <button type="button" class="flex-1 py-2 px-3 border border-gray-300 rounded-lg hover:bg-gray-50 text-sm" data-mock="true">Fair</button>
+                                <button type="button" class="flex-1 py-2 px-3 border border-gray-300 rounded-lg hover:bg-gray-50 text-sm" data-mock="true">Good</button>
+                                <button type="button" class="flex-1 py-2 px-3 bg-primary text-white rounded-lg text-sm" data-mock="true">Excellent</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Notes</label>
+                            <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" rows="3" placeholder="Any additional notes about your health today?" data-mock="true"></textarea>
+                        </div>
+
+                        <div class="flex justify-end space-x-3 pt-4">
+                            <button type="button" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50" onclick="closeHealthModal()">Cancel</button>
+                            <button type="button" class="px-4 py-2 bg-secondary text-white rounded-lg hover:bg-green-700" onclick="updateHealthMetrics()">Update Metrics</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation (Bottom Tab Bar) -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:hidden z-40" id="mobileNav" style="display: none;" data-mock="true">
+        <div class="grid grid-cols-4 py-2">
+            <button class="flex flex-col items-center py-2 text-primary" onclick="showDashboardView()">
+                <i class="fas fa-home text-xl mb-1"></i>
+                <span class="text-xs">Home</span>
+            </button>
+            <button class="flex flex-col items-center py-2 text-gray-400" onclick="showWorkoutView()">
+                <i class="fas fa-dumbbell text-xl mb-1"></i>
+                <span class="text-xs">Workouts</span>
+            </button>
+            <button class="flex flex-col items-center py-2 text-gray-400" onclick="showHealthView()">
+                <i class="fas fa-heart text-xl mb-1"></i>
+                <span class="text-xs">Health</span>
+            </button>
+            <button class="flex flex-col items-center py-2 text-gray-400" onclick="showScheduleView()">
+                <i class="fas fa-calendar text-xl mb-1"></i>
+                <span class="text-xs">Schedule</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // Authentication functions
+            window.showLogin = function() {
+                document.getElementById('authModal').classList.remove('hidden');
+                document.getElementById('loginForm').classList.remove('hidden');
+                document.getElementById('signupForm').classList.add('hidden');
+            };
+
+            window.showSignup = function() {
+                document.getElementById('authModal').classList.remove('hidden');
+                document.getElementById('signupForm').classList.remove('hidden');
+                document.getElementById('loginForm').classList.add('hidden');
+            };
+
+            window.showLoginForm = function() {
+                document.getElementById('loginForm').classList.remove('hidden');
+                document.getElementById('signupForm').classList.add('hidden');
+            };
+
+            window.showSignupForm = function() {
+                document.getElementById('signupForm').classList.remove('hidden');
+                document.getElementById('loginForm').classList.add('hidden');
+            };
+
+            window.closeAuth = function() {
+                document.getElementById('authModal').classList.add('hidden');
+            };
+
+            // Onboarding functions
+            window.showOnboarding = function() {
+                document.getElementById('authModal').classList.add('hidden');
+                document.getElementById('onboardingModal').classList.remove('hidden');
+            };
+
+            window.closeOnboarding = function() {
+                document.getElementById('onboardingModal').classList.add('hidden');
+                showDashboard();
+            };
+
+            // Dashboard functions
+            window.showDashboard = function() {
+                document.getElementById('onboardingModal').classList.add('hidden');
+                document.getElementById('authModal').classList.add('hidden');
+                document.getElementById('dashboard').classList.remove('hidden');
+                document.getElementById('mobileNav').style.display = 'block';
+                // Hide landing page elements
+                document.querySelector('nav').style.display = 'none';
+                document.querySelector('section').style.display = 'none';
+                document.querySelectorAll('section')[1].style.display = 'none';
+            };
+
+            // Modal functions
+            window.showWorkoutLogging = function() {
+                document.getElementById('workoutModal').classList.remove('hidden');
+            };
+
+            window.closeWorkoutModal = function() {
+                document.getElementById('workoutModal').classList.add('hidden');
+            };
+
+            window.showHealthMetrics = function() {
+                document.getElementById('healthModal').classList.remove('hidden');
+            };
+
+            window.closeHealthModal = function() {
+                document.getElementById('healthModal').classList.add('hidden');
+            };
+
+            // Action functions
+            window.logWorkout = function() {
+                // TODO: Implement workout logging API call
+                alert('Workout logged successfully! 🎉');
+                closeWorkoutModal();
+            };
+
+            window.updateHealthMetrics = function() {
+                // TODO: Implement health metrics API call
+                alert('Health metrics updated successfully! 💪');
+                closeHealthModal();
+            };
+
+            // Navigation functions (placeholders)
+            window.showDashboardView = function() {
+                // TODO: Show dashboard content
+            };
+
+            window.showWorkoutView = function() {
+                // TODO: Show workout history and logging interface
+            };
+
+            window.showHealthView = function() {
+                // TODO: Show health metrics and trends
+            };
+
+            window.showScheduleView = function() {
+                // TODO: Show scheduled workouts and calendar
+            };
+
+            // Goal selection in onboarding
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('[data-mock="true"]') && e.target.closest('.border-2')) {
+                    const goalCards = document.querySelectorAll('.border-2.border-gray-200');
+                    goalCards.forEach(card => {
+                        card.classList.remove('border-primary', 'bg-primary', 'bg-opacity-5');
+                        card.classList.add('border-gray-200');
+                    });
+                    
+                    const selectedCard = e.target.closest('.border-2');
+                    selectedCard.classList.remove('border-gray-200');
+                    selectedCard.classList.add('border-primary', 'bg-primary', 'bg-opacity-5');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
